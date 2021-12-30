@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "4f26480c-fadc-459f-9bd3-28329c58224d",
+		"name": "Productos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"TV LG\", \r\n    \"descripcion\": \"TV\", \r\n    \"precio\": 5000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/createProduct?categoria=Hogar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"createProduct"
+					],
+					"query": [
+						{
+							"key": "categoria",
+							"value": "Hogar"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/allProducts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"allProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "conditionProducts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"categoria\": \"Mobile\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/filterProducts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"filterProducts"
+					],
+					"query": [
+						{
+							"key": "titulo",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "categoria",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCategory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/updateProduct/61cbf04977c566d299b49de6?categoria=Mobile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"updateProduct",
+						"61cbf04977c566d299b49de6"
+					],
+					"query": [
+						{
+							"key": "categoria",
+							"value": "Mobile"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DelteProduct",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/deleteProduct/61cbf04977c566d299b49de6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"deleteProduct",
+						"61cbf04977c566d299b49de6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
